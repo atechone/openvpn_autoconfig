@@ -106,5 +106,4 @@ $(cat ca-cert.pem)
 EOF
 
 service openvpn restart
-cat client.ovpn
 cd -
