@@ -86,7 +86,7 @@ dev         tun443
 status      openvpn-status-443.log
 EOF
 
->'$HST'.ovpn cat <<EOF
+>$HST.ovpn cat <<EOF
 client
 nobind
 dev tun
