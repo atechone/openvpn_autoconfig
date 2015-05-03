@@ -50,6 +50,7 @@ iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 # Write configuration files for client and server
 
 SERVER_IP=`ip addr list eth0 |grep "inet " |cut -d' ' -f6|cut -d/ -f1`
+HST=`hostname`
 
 >tcp443.conf cat <<EOF
 server      10.8.0.0 255.255.255.0
@@ -85,7 +86,7 @@ dev         tun443
 status      openvpn-status-443.log
 EOF
 
->client.ovpn cat <<EOF
+>'$HST'.ovpn cat <<EOF
 client
 nobind
 dev tun
