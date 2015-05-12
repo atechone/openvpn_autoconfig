@@ -20,9 +20,9 @@ sudo apt-get install -qy openvpn curl iptables-persistent
 cd /etc/openvpn
 
 # Certificate Authority
->ca-key.pem      openssl genrsa 2048
->ca-csr.pem      openssl req -new -key ca-key.pem -subj /CN=OpenVPN-CA/
->ca-cert.pem     openssl x509 -req -in ca-csr.pem -signkey ca-key.pem -days 365
+>ca-key.pem      sudo openssl genrsa 2048
+>ca-csr.pem      sudo openssl req -new -key ca-key.pem -subj /CN=OpenVPN-CA/
+>ca-cert.pem     sudo openssl x509 -req -in ca-csr.pem -signkey ca-key.pem -days 365
 >ca-cert.srl     echo 01
 
 # Server Key & Certificate
