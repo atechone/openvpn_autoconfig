@@ -11,7 +11,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 sudo apt-get update -q
-debconf-set-selections <<EOF
+sudo debconf-set-selections <<EOF
 iptables-persistent iptables-persistent/autosave_v4 boolean true
 iptables-persistent iptables-persistent/autosave_v6 boolean true
 EOF
